@@ -2,9 +2,22 @@
 
 ## Overview
 
-This project extracts tables from PDF documents and converts them into structured CSV files using classical computer vision techniques.
+A rule-based PDF table extraction pipeline built using computer vision and OCR.
+This project detects tables from PDF documents, extracts structured cell content, and exports the results as CSV files.
+It is designed to demonstrate how table extraction works internally using classical image processing techniques instead of deep learning-based document AI models.
 
-It detects table structures using morphological operations and applies OCR to extract cell text.
+---
+
+## Features
+
+- Converts PDF pages to images
+- Detects table structure using morphological operations
+- Extracts cell bounding boxes
+- Groups cells into rows and tables
+- Performs OCR on each cell using Tesseract
+- Cleans noisy OCR output
+- Exports each table as a CSV file
+- Supports multiple tables per page
 
 ---
 
@@ -40,25 +53,6 @@ Update poppler_path in main.py
 
 ---
 
-## How to Run
-
-Update:
-
-PDF_PATH  
-PAGE_INDEX  
-TESSERACT_PATH  
-POPPLER_PATH  
-
-Then run:
-
-python main.py
-
-Extracted tables will be saved in:
-
-extracted_output/
-
----
-
 ## Limitations
 
 - Borderless tables not supported
@@ -72,4 +66,3 @@ extracted_output/
 - Borderless detection
 - Header detection
 - Multi-page automation
-- LayoutLM integration
